@@ -7,4 +7,4 @@ services:
       POSTGRES_PASSWORD: "${DATABASE_PASS}"
       POSTGRES_DB: "${DATABASE_NAME}"
     ports:
-      - ${DATABASE_PORT}:5432
+      - "${DATABASE_PORT}:5432"
