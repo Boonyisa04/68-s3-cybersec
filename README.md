@@ -12,3 +12,7 @@ cp env.simple .env
 
 ## Runningser services
 ### Database
+```sh
+docker-compose -f db.yaml up # monitoring
+docker-compose -f db.yaml up -d # background
+```
