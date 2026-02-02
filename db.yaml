@@ -1,0 +1,10 @@
+services:
+  s3db:
+    image: postgres:latest
+    container_name: 68-s3-database
+    environment: 
+      POSTGRES_USER: "Boonyisa"
+      POSTGRES_PASSWORD: "myboonysia04"
+      POSTGRES_DB: "s3_boonyisa"
+    ports:
+      - 55432:5432
