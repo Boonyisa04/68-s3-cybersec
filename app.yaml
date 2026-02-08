@@ -1,0 +1,18 @@
+services:
+  # โจทย์: ชื่อ service s{X}app
+  s21app:
+    image: nginx:alpine  # ใช้ Nginx เป็นตัวแทน Application (กินทรัพยากรน้อย)
+    # โจทย์: ชื่อ container 68-s{X}-app
+    container_name: 68-s21-app
+    restart: unless-stopped # ให้ทำงานตลอด ยกเว้นเราสั่งหยุดเอง
+    ports:
+      - "${APP_PORT}:80" # ดึงค่า Port มาจาก .env
+    networks:
+      - my-network
+    # Security Consideration:
+    # การระบุเวอร์ชัน image (alpine) ช่วยลดขนาดและช่องโหว่
+    # การใช้ environment variable สำหรับ Port ช่วยซ่อน config
+
+networks:
+  my-network:
+    driver: bridge
