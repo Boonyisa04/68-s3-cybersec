@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  s3admin: # เปลี่ยน {X} เป็นเลข 3 ตาม path 
+  s3admin: # เปลี่ยน {X} เป็นเลข 3 ตาม path
     image: dpage/pgadmin4
     container_name: 68-s3-admin
     restart: always
@@ -10,8 +10,8 @@ services:
     ports:
       - "8080:80"
     networks:
-      - my-network # ต้องมีเครื่องหมายขีด (-) และย่อหน้าให้ตรงกับ ports
+      - my-network
 
 networks:
-  my-network: # ประกาศชื่อ network ที่ด้านนอกสุดของไฟล์ด้วย
+  my-network:
     driver: bridge
