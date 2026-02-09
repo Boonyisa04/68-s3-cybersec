@@ -1,6 +1,6 @@
 services: 
-    s3admin:
-    image: dpage/pgadmin4
+  s3admin:
+    image: dpage/pgadmin:latest
     container_name: 68-s3-admin
     ports:
         - "${PGADMIN_PORT}:80"
