@@ -1,17 +1,9 @@
-version: '3.8'
-services:
-  s3admin: # เปลี่ยน {X} เป็นเลข 3 ตาม path
+services: 
+    s3admin:
     image: dpage/pgadmin4
     container_name: 68-s3-admin
-    restart: always
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
     ports:
-      - "8080:80"
-    networks:
-      - my-network
-
-networks:
-  my-network:
-    driver: bridge
+        - "${ADMIN_PORT}:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "${PGADMIN_DEFAULT_EMAIL}"
+      PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_DEFAULT_PASSWORD}"
